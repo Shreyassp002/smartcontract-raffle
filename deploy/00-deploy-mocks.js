@@ -14,17 +14,11 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         await deploy("VRFCoordinatorV2Mock", {
             from: deployer,
             log: true,
-            args: [BASE_FEE, GAS_PRICE_LINK], 
+            args: [BASE_FEE, GAS_PRICE_LINK],
         })
 
         log("Mocks Deployed!")
-        log("----------------------------------------------------------")
-        log("You are deploying to a local network, you'll need a local network running to interact")
-        log(
-            "Please run `yarn hardhat console --network localhost` to interact with the deployed smart contracts!",
-        )
-        log("----------------------------------------------------------")
     }
 }
 
-module.exports.tags= ["all","mocks"]
+module.exports.tags = ["all", "mocks"]
