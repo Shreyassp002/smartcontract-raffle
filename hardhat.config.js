@@ -1,4 +1,5 @@
-require("@nomiclabs/hardhat-waffle")
+// require("@nomiclabs/hardhat-waffle")
+require("@nomicfoundation/hardhat-chai-matchers")
 require("@nomiclabs/hardhat-etherscan")
 require("hardhat-deploy")
 require("solidity-coverage")
@@ -22,7 +23,7 @@ module.exports = {
             chainId: 11155111,
             blockConfirmations: 6,
         },
-        hardhat:{
+        hardhat: {
             chainId: 31337,
             blockConfirmations: 1,
         },
@@ -31,7 +32,22 @@ module.exports = {
             //accounts: hardhat handles this
             chainId: 31337,
         },
-    }, 
+    },
+    etherscan: {
+        apiKey: ETHERSCAN_API_KEY,
+    },
+    sourcify: {
+        // Disabled by default
+        // Doesn't need an API key
+        enabled: true,
+    },
+    gasReporter: {
+        enabled: false,
+        outputFile: "gas-report.txt",
+        noColors: true,
+        currency: "USD",
+        // coinmarketcap: COINMARKET_API_KEY
+    },
     namedAccounts: {
         deployer: {
             default: 0,

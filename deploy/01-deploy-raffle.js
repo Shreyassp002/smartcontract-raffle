@@ -12,7 +12,11 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
     let vrfCoordinatorV2Address, subscriptionId
 
     if (developmentChains.includes(network.name)) {
-        const vrfCoordinatorV2Mock = await ethers.getContract("VRFCoordinatorV2Mock")
+        const vrfCoordinatorV2MockDeployment = await deployments.get("VRFCoordinatorV2Mock")
+        const vrfCoordinatorV2Mock = await ethers.getContractAt(
+            "VRFCoordinatorV2Mock",
+            vrfCoordinatorV2MockDeployment.address,
+        )
         vrfCoordinatorV2Address = vrfCoordinatorV2Mock.target
         const transactionResponse = await vrfCoordinatorV2Mock.createSubscription()
         const transactionReceipt = await transactionResponse.wait(1)
@@ -23,7 +27,6 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
         subscriptionId = Number(parsedEvent.args.subId)
 
         // Fund the subscription
-        // Our mock makes it so we don't actually have to worry about sending fund
         await vrfCoordinatorV2Mock.fundSubscription(subscriptionId, FUND_AMOUNT)
     } else {
         vrfCoordinatorV2Address = networkConfig[chainId]["vrfCoordinatorV2"]

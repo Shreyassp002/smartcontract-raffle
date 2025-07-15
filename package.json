@@ -1,6 +1,7 @@
 {
     "devDependencies": {
         "@chainlink/contracts": "^1.4.0",
+        "@nomicfoundation/hardhat-chai-matchers": "^2.0.9",
         "@nomicfoundation/hardhat-ethers": "^3.0.2",
         "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
         "@nomiclabs/hardhat-etherscan": "^3.1.8",
