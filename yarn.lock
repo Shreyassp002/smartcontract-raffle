@@ -3865,6 +3865,11 @@ hardhat-gas-reporter@^2.3.0:
     sha1 "^1.1.1"
     viem "^2.27.0"
 
+hardhat-verify@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/hardhat-verify/-/hardhat-verify-1.0.0.tgz#13c8e4e015cfb64a2637a7de5c9fa108023b3e2b"
+  integrity sha512-mLCAVyXTz3M9mDDv8qDNsEQfiopURX/eAwpS6jXyqeCUUtgr1eeYfrzigeT/Hut6RO8d1CmUuW9BHvG8cEL1fg==
+
 hardhat@^2.25.0:
   version "2.25.0"
   resolved "https://registry.yarnpkg.com/hardhat/-/hardhat-2.25.0.tgz#473bf07b62a0ea30cf003e4585f71a0ffc70c739"
