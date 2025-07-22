@@ -20,9 +20,14 @@ const networkConfig = {
     },
 }
 
+const frontEndContractsFile = "../raffle-frontend/constants/contractAddresses.json"
+const frontEndAbiFile = "../raffle-frontend/constants/abi.json"
+
 const developmentChains = ["hardhat", "localhost"]
 
 module.exports = {
     networkConfig,
     developmentChains,
+    frontEndContractsFile,
+    frontEndAbiFile,
 }
