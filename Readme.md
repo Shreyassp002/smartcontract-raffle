@@ -1,8 +1,12 @@
 # Decentralized Raffle Smart Contract
 
+![Solidity](https://img.shields.io/badge/Solidity-0.8.18+-363636?style=for-the-badge&logo=solidity) ![Hardhat](https://img.shields.io/badge/Hardhat-2.0+-FFF04D?style=for-the-badge&logo=hardhat&logoColor=black) ![Chainlink](https://img.shields.io/badge/Chainlink-VRF%20v2.5-375BD2?style=for-the-badge&logo=chainlink) ![Ethereum](https://img.shields.io/badge/Ethereum-Sepolia-627EEA?style=for-the-badge&logo=ethereum) 
+
+![Web3](https://img.shields.io/badge/Web3-Decentralized-9945FF?style=flat-square) ![Smart Contract](https://img.shields.io/badge/Smart%20Contract-Raffle-blue?style=flat-square) ![Provably Fair](https://img.shields.io/badge/Provably-Fair-success?style=flat-square) ![Automated](https://img.shields.io/badge/Chainlink-Automated-orange?style=flat-square) ![Gas Optimized](https://img.shields.io/badge/Gas-Optimized-brightgreen?style=flat-square)
+
 A provably fair, decentralized raffle contract built with Solidity using Chainlink VRF v2.5 for randomness and Chainlink Keepers for automation.
 
-## Overview
+## 🎯 Overview
 
 This smart contract implements a decentralized raffle system where:
 - Players can enter by paying an entrance fee
@@ -10,15 +14,15 @@ This smart contract implements a decentralized raffle system where:
 - The raffle automatically restarts after a winner is picked
 - Chainlink Keepers trigger the winner selection automatically
 
-## Features
+## ✨ Features
 
-- **Provably Fair**: Uses Chainlink VRF v2.5 for verifiable randomness
-- **Automated**: Chainlink Keepers automatically trigger winner selection
-- **Decentralized**: No central authority controls the outcome
-- **Transparent**: All transactions are recorded on the blockchain
-- **Gas Efficient**: Optimized contract design
+- **🎲 Provably Fair**: Uses Chainlink VRF v2.5 for verifiable randomness
+- **🤖 Automated**: Chainlink Keepers automatically trigger winner selection
+- **🌐 Decentralized**: No central authority controls the outcome
+- **👁️ Transparent**: All transactions are recorded on the blockchain
+- **⛽ Gas Efficient**: Optimized contract design
 
-## Prerequisites
+## 📋 Prerequisites
 
 - Node.js (v16 or higher)
 - Yarn package manager
@@ -27,7 +31,7 @@ This smart contract implements a decentralized raffle system where:
 - Chainlink VRF subscription (for testnet deployment)
 - LINK tokens (for VRF subscription and Keepers upkeep funding)
 
-## Installation
+## 🚀 Installation
 
 1. Clone the repository:
 ```bash
@@ -42,7 +46,7 @@ yarn install
 
 3. Set up environment variables (see Environment Setup section)
 
-## Environment Setup
+## 🔧 Environment Setup
 
 Create a `.env` file in the root directory with the following variables:
 
@@ -71,7 +75,7 @@ ETHERSCAN_API_KEY=your_etherscan_api_key_here
    - Create account on [Etherscan](https://etherscan.io/)
    - Go to API section and create a new API key
 
-## Chainlink VRF Setup
+## 🔗 Chainlink VRF Setup
 
 ### For Testnet Deployment:
 
@@ -97,19 +101,19 @@ const networkConfig = {
         gasLane: "0x787d74caea10b2b357790d5b5247c2f63d1d91572a9846f780606e4d953677ae",
         subscriptionId: "YOUR_SUBSCRIPTION_ID_HERE", // Add your subscription ID
         callbackGasLimit: "500000",
-        interval: "30",
+        interval: "30", // 30 seconds
     },
     31337: {
         name: "hardhat",
         entranceFee: ethers.utils.parseEther("0.01"),
         gasLane: "0x787d74caea10b2b357790d5b5247c2f63d1d91572a9846f780606e4d953677ae",
         callbackGasLimit: "500000",
-        interval: "30",
+        interval: "30", // 30 seconds
     },
 }
 ```
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 SmartContract-Lottery/
@@ -131,7 +135,7 @@ SmartContract-Lottery/
 └── hardhat.config.js          # Hardhat configuration
 ```
 
-## Usage
+## 💻 Usage
 
 ### Development (Local Testing)
 
@@ -187,7 +191,7 @@ yarn hardhat verify --network sepolia <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS>
 yarn hardhat test --network sepolia
 ```
 
-## Contract Interaction
+## 📡 Contract Interaction
 
 ### Key Functions
 
@@ -197,7 +201,7 @@ yarn hardhat test --network sepolia
 - `getRaffleState()`: Check if raffle is open or calculating
 - `getNumberOfPlayers()`: Get current number of players
 
-## Testing
+## 🧪 Testing
 
 ### Unit Tests (Local)
 ```bash
@@ -220,7 +224,7 @@ yarn hardhat test --network sepolia
 yarn hardhat test test/staging/Raffle.staging.test.js --network sepolia
 ```
 
-## Configuration
+## ⚙️ Configuration
 
 ### Network Configuration
 
@@ -233,11 +237,11 @@ The contract is configured for:
 - **VRF v2.5**: For provably fair randomness
 - **Keepers**: For automated upkeep (must be registered after deployment)
 - **Entrance Fee**: 0.01 ETH (configurable)
-- **Interval**: 30 seconds between draws
+- **Interval**: 30 seconds between draws ⏰
 - **Subscription ID**: Must be configured in helper-hardhat-config.js
 - **Upkeep Registration**: Required for automated winner selection
 
-## Dependencies
+## 📦 Dependencies
 
 ### Core Dependencies
 - `@chainlink/contracts`: Chainlink smart contracts
@@ -256,7 +260,7 @@ The contract is configured for:
 - `prettier`: Code formatting
 - `solidity-coverage`: Test coverage
 
-## Scripts
+## 📜 Scripts
 
 ```bash
 # Install dependencies
@@ -286,3 +290,30 @@ yarn hardhat size-contracts
 # Generate coverage report
 yarn hardhat coverage
 ```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🔗 Related Repositories
+
+- **Frontend**: [raffle-frontend](https://github.com/your-username/raffle-frontend) - Next.js frontend for the raffle dApp
+
+## 📞 Support
+
+For support and questions:
+- Open an issue in this repository
+- Check the frontend repository for UI-related issues
+- Review the troubleshooting section above
+
+---
+
+**Built with ❤️ using Solidity, Hardhat, and Chainlink**d
